@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Table one{% endblock %}
+
+{% block content %}
+    <div class="value_from_table">
+        <h2>«Данные из таблицы: Users»</h2>
+        {% for el in data %}
+            <p>{{ el.f_name }} - {{ el.s_name }} - {{ el.n_name }} - {{ el.email }} - {{ el.age }} - {{ el.favorite }}</p>
+        {% endfor %}
+    </div>
+    <div class="form">
+        <a href="{% url 'table_one' %}">Таблица 1</a>
+        <a href="{% url 'table_two' %}">Таблица 2</a>
+        <a href="{% url 'home' %}">На главную</a>
+    </div>
+{% endblock %}
